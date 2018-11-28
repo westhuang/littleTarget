@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 已有目标，展示目标 -->
+  <view wx:if="{{targetList.length > 0}}" class="list">
+    <block wx:for="{{targetList}}" wx:for-index="listTargetId">
+        <!-- 内容区 -->
+        <view wx:if="{{listTargetId==0}}" class="whiteLine"></view>
+        <view class="icons">
+          <!-- <text class="target-name">目标：{{item.target_name}}</text> -->
+          <image wx:if="{{item.isopen==true}}" src="../../images/open.png" class="open-size"></image>
+          <image wx:else src="../../images/opennot.png" class="opennot-size"></image>
+          <image src="../../images/delete.png" data-targetId="{{item._id}}" bindtap="deleteTarget" class="open-size"></image>
+        </view>
+        <view>
+          <text class="target-content">{{item.target_content}}</text>
+        </view>
+        <view>
+          <text class="target-time">{{item.begin_time}}</text>
+        </view>
+
+        <!-- 结果区 -->
+        <view wx:if="{{item.status=='ING'}}">
+          <button bindtap="doRecord" data-targetId="{{item._id}}" class="record-btn">记录结果</button>
+        </view>
+        <view wx:else class="result-background">
+          <text class="result-show">～结果展示～</text>
+          <view wx:if="{{item.result_content!=''}}">
+            <text class="result-content">{{item.result_content}}</text>
+          </view>
+          <view wx:if="{{item.result_pic_list.length > 0}}" class="pic-list">
+            <view wx:for="{{item.result_pic_list}}" wx:for-index="picId">
+              <image src='{{item}}' mode="aspectFill" data-targetId="{{listTargetId}}" data-picId="{{picId}}" bindtap='previewImageList' class="pic"></image>
+            </view>
+          </view>
+          <view wx:if="{{item.result_film!=''}}">
+            <video class="film" src="{{item.result_film}}" class="film"></video>
+          </view>
+        </view>
+
+        <!-- 分割线 -->
+        <view class="divLine"></view>
+      </block>
+  </view>
+  <!-- 还没目标，展示标语 -->
+  <view wx:else>
+    <text class="no-target-test">嘿，兄弟，\n快去新建目标吧~</text>
+  </view>
+</view>

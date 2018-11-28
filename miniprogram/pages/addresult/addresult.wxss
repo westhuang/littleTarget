@@ -1,0 +1,39 @@
+/* miniprogram/pages/addresult/addresult.wxss */
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  justify-content: center;
+}
+
+.result-content {
+  margin-top: 25rpx;
+  border:1px solid #E0E3DA;
+  background: #ffffff;
+  width:650rpx;
+  height:400rpx;
+  justify-content:center;
+}
+
+.pic-list {
+  width:600rpx;
+  flex-wrap:wrap;
+  margin-top:10rpx;
+}
+
+.pic {
+  width:170rpx;
+  height:150rpx;
+  margin-left:8rpx;
+}
+
+.film {
+  width:170rpx;
+  height:150rpx;
+  margin-left:8rpx;
+}
+
+.btn {
+  margin-top: 25rpx;
+  width:30%;
+}

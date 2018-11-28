@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/peopletarget/peopletarget",
+    "pages/addresult/addresult",
+    "pages/addtarget/addtarget",
+    "pages/chooseLib/chooseLib"
+  ],
+  "window": {
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "小目标",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "cloud": true,
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor":"#1afa29",
+    "borderStyle":"black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath":"images/myB.png",
+        "selectedIconPath":"images/myG.png"
+      },
+      {
+        "pagePath": "pages/addtarget/addtarget",
+        "text": "新建",
+        "iconPath": "images/addB.png",
+        "selectedIconPath": "images/addG.png"
+      },
+      {
+        "pagePath": "pages/peopletarget/peopletarget",
+        "text": "大家",
+        "iconPath": "images/peopleB.png",
+        "selectedIconPath": "images/peopleG.png"
+      }
+    ]
+  }
+}

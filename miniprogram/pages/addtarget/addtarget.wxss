@@ -1,0 +1,34 @@
+/* miniprogram/pages/addtarget/addtarget.wxss */
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  justify-content: center;
+}
+
+.target-name-text {
+  border:1px solid #E0E3DA;
+  background: #ffffff;
+  width:650rpx;
+  height:55rpx;
+  justify-content:center;
+}
+
+.target-content-text {
+  margin-top: 25rpx;
+  border:1px solid #E0E3DA;
+  background: #ffffff;
+  width:650rpx;
+  height:400rpx;
+  justify-content:center;
+}
+
+.swith {
+  margin-top: 25rpx;
+  font-size: 30rpx;
+}
+
+.btn {
+  margin-top: 25rpx;
+  width:30%;
+}

@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 已有目标，展示目标 -->
+  <view wx:if="{{targetList.length > 0}}" class="list">
+    <block wx:for="{{targetList}}" wx:for-index="listTargetId">
+        <!-- 内容区 -->
+        <view wx:if="{{listTargetId==0}}" class="whiteLine"></view>
+        <view class="userinfo">
+          <image src="{{item.avatar_url}}" class="avatar"></image>
+          <text class="nickname">{{item.nickname}}</text>
+        </view>
+        <!-- <view>
+          <text class="target-name">目标：{{item.target_name}}</text>
+        </view> -->
+        <view>
+          <text class="target-content">{{item.target_content}}</text>
+        </view>
+        <view>
+          <text class="target-time">{{item.begin_time}}</text>
+        </view>
+
+        <!-- 结果区 -->
+        <view wx:if="{{item.status=='DONE'}}" class="result-background">
+          <text class="result-show">～结果展示～</text>
+          <view wx:if="{{item.result_content!=''}}">
+            <text class="result-content">{{item.result_content}}</text>
+          </view>
+          <view wx:if="{{item.result_pic_list.length > 0}}" class="pic-list">
+            <view wx:for="{{item.result_pic_list}}" wx:for-index="picId">
+              <image src='{{item}}' mode="aspectFill" data-targetId="{{listTargetId}}" data-picId="{{picId}}" bindtap='previewImageList' class="pic"></image>
+            </view>
+          </view>
+          <view wx:if="{{item.result_film!=''}}">
+            <video src="{{item.result_film}}" class="film"></video>
+          </view>
+        </view>
+
+        <!-- 分割线 -->
+        <view class="divLine"></view>
+      </block>
+  </view>
+  <!-- 还没目标，展示标语 -->
+  <view wx:else>
+    <text class="no-target-test">还没目标公开~</text>
+  </view>
+</view>

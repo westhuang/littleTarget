@@ -1,0 +1,9 @@
+<!--miniprogram/pages/addtarget/addtarget.wxml-->
+<view>
+  <form bindsubmit="formSubmit">
+    <!-- <textarea name="targetName" placeholder="目标标题" maxlength="16" class="target-name-text"></textarea> -->
+    <textarea name="targetContent" placeholder="目标" maxlength="1024" class="target-content-text"></textarea>
+    <switch type="checkbox" bindchange="swithChange" class="swith">公开</switch>
+    <button formType="submit" open-type="getUserInfo" class="btn">发布</button>
+  </form>
+ </view>

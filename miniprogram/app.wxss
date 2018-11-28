@@ -1,0 +1,27 @@
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #ffffff;
+} 
+
+/*分割线样式*/
+.divLine{
+  height:1rpx;
+  border:none;
+  border-top:1px solid #E0E3DA;
+  display: flex;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+}
+
+/*空行样式*/
+.whiteLine{
+  height:1rpx;
+  border:none;
+  border-top:1px solid #ffffff;
+  display: flex;
+  margin-bottom: 50rpx;
+}

@@ -1,0 +1,33 @@
+<!--miniprogram/pages/addresult/addresult.wxml-->
+<view>
+  <form bindsubmit="formSubmit">
+    <!-- 文字记录 -->
+     <view>
+      <textarea name="resultContent" placeholder="文字记录" class="result-content"></textarea>
+    </view>
+      
+    <!-- 图片记录 -->
+    <view>
+      <text>图片记录</text>
+    </view>
+    <view class="pic-list">
+      <block wx:for="{{tmpPicList}}" wx:for-index="picId">
+        <image src='{{item}}' mode="aspectFill" data-id="{{picId}}" bindtap='previewImageList' class="pic"> </image>
+      </block>
+      <image hidden='{{isMaxPicNum}}' bindtap="chooseImg" src='../../images/plus.png' mode="aspectFit" class="pic"></image>
+    </view>
+
+    <!-- 视频记录 -->
+    <view>
+      <text>视频记录</text>
+    </view>
+    <view>
+      <video hidden='{{!isChoosedFilm}}' src='{{tmpFilmSrc}}' class="film"></video>
+      <image hidden='{{isChoosedFilm}}' bindtap="chooseFilm" src='../../images/plus.png' mode="aspectFit" class="film"></image>
+    </view>
+
+    <view>
+      <button formType="submit" class="btn">发布</button>
+    </view>
+  </form>
+ </view>
